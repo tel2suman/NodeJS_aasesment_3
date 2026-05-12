@@ -14,7 +14,7 @@ const BlogSchema = new Schema(
       required: true,
     },
 
-    image: {
+    cover_image: {
       type: String,
       default: "default.jpg",
     },

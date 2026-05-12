@@ -1,0 +1,40 @@
+<%- include('layouts/header') %>
+
+    <%- include('layouts/nav') %>
+
+        <div class="container">
+            <div class="row mt-5">
+                <h2 class="lead fw-normal fs-3 text-capitalize">Update Blog</h2>
+                <form action="/update/post/<%=data._id %>" method="post" class="p-4 border rounded-3 bg-light"
+                    enctype="multipart/form-data">
+                    <div class="row p-3 bg-light-400">
+                        <div class="mb-3">
+                            <label for="title" class="form-label fs-5">Title</label>
+                            <input type="text" class="form-control field-control" placeholder="Enter Blog Title"
+                                name="title" value="<%=data.title %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="content" class="form-label fs-5">Content</label>
+                            <input type="text" class="form-control field-control" placeholder="Enter Blog Content"
+                                name="content" value="<%=data.content %>" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="cover_image" class="form-label fs-5">Cover Image</label>
+                            <% if (data.cover_image) { %>
+                                <div class="mb-2">
+                                    <img src="<%= data.cover_image %>" width="100" class="rounded"
+                                        alt="Employee Image Not Available">
+                                </div>
+                                <% } %>
+                                    <input type="file" class="form-control field-control" name="cover_image"
+                                        value="<%=data.cover_image %>">
+                        </div>
+
+                        <div class="col-3 my-3">
+                            <button type="submit" class="btn btn-lg btn-primary">Update Details</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
