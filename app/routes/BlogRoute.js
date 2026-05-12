@@ -46,7 +46,4 @@ router.get(
   BlogController.softdeletePost,
 );
 
-
-
-
 module.exports = router;
