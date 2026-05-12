@@ -1,0 +1,50 @@
+<%- include('layouts/header') %>
+
+    <%- include('layouts/nav') %>
+
+    <div class="container">
+        <div class="row mt-5">
+            <h2 class="lead fw-normal fs-3 text-capitalize">Update User</h2>
+            <form action="/update/profile" method="post" class="p-4 border rounded-3 bg-light"
+                enctype="multipart/form-data">
+                <div class="row p-3 bg-light-400">
+                    <div class="mb-3">
+                        <label for="name" class="form-label fs-5">Name</label>
+                        <input type="text" class="form-control field-control" placeholder="Enter " name="name"
+                            value="<%=data.name %>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label fs-5">Email</label>
+                        <input type="email" class="form-control field-control" placeholder="Enter User Email" name="email"
+                            value="<%=data.email %>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label fs-5">Password</label>
+                        <input type="password" class="form-control field-control"
+                            placeholder="Password must be at least 6 characters" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label fs-5">Profile Image</label>
+                        <% if (data.image) { %>
+                            <div class="mb-2">
+                                <img src="<%= data.image %>" width="100" class="rounded" alt="Image Not Available">
+                            </div>
+                            <% } %>
+                                <input type="file" class="form-control field-control" name="image" value="<%=data.image %>">
+                    </div>
+
+                    <!-- Message input-->
+                    <div class="mb-3">
+                        <textarea class="form-control form-control-lg" name="about" placeholder="Enter about yourself"
+                            rows="3"><%=data.about %></textarea>
+                    </div>
+
+                    <div class="col-3 my-3">
+                        <button type="submit" class="btn btn-lg btn-primary">Update Details</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<%- include('layouts/footer') %>

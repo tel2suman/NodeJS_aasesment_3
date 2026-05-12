@@ -1,0 +1,51 @@
+<%- include('layouts/header') %>
+
+    <section class="bg-light py-5">
+        <div class="container px-5 my-5 px-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bolder">Please register here</h2>
+            </div>
+            <div class="row p-3 bg-light justify-content-center">
+                <div class="col-lg-7 col-12">
+                    <form action="/register" class="p-4 border rounded-3 bg-light" method="post"
+                        enctype="multipart/form-data">
+                        <!-- Name input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control form-control-lg" name="name" type="text"
+                                placeholder="Enter your name...">
+                            <label for="name">Full name</label>
+                        </div>
+                        <!-- Email address input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control form-control-lg" name="email" type="email"
+                                placeholder="name@example.com">
+                            <label for="email">Email</label>
+                        </div>
+                        <!-- Password input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control form-control-lg" name="password" type="password"
+                                placeholder="Enter Your Password">
+                            <label for="password">Password</label>
+                        </div>
+                        <!-- Message input-->
+                        <div class="mb-3">
+                            <textarea class="form-control form-control-lg" name="about" id="about"
+                                placeholder="Enter Your Message" rows="3"></textarea>
+                        </div>
+                        <!-- Message input-->
+                        <div class="mb-3">
+                            <input type="file" class="form-control form-control-lg" name="image"
+                                placeholder="Choose Image File">
+                        </div>
+                        <!-- Submit Button-->
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-lg" type="submit">Register User</button>
+                        </div>
+                        <hr class="mt-3">
+                        <h5 class="text-black text-center fw-normal fs-5">Already have an account? Please <a
+                                class="text-primary text-decoration-none" href="/login">Login</a></h5>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
